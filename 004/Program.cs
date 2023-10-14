@@ -1,31 +1,30 @@
-﻿/* Задача 25: Напишите цикл, который принимает на вход два числа (A и B) и возводит число A в натуральную степень B.
-3, 5 -> 243 (3⁵)
-2, 4 -> 16
+﻿/*Задача 25
+Console.Write("Введите числа a и b через запятую: ");
+string input = Console.ReadLine();
+string[] numbers = input.Split(',');
+int a = int.Parse(numbers[0]);
+int b = int.Parse(numbers[1]);
 
-Задача 27: Напишите программу, которая принимает на вход число и выдаёт сумму цифр в числе.
-452 -> 11
-82 -> 10
-9012 -> 12
+int result = 1;
 
-Задача 29: Напишите программу, которая задаёт массив из 8 элементов и выводит их на экран.
-1, 2, 5, 7, 19 -> [1, 2, 5, 7, 19]
-6, 1, 33 -> [6, 1, 33]*/
-//Задача 25
+for (int i = 0; i < b; i++)
+{
+    result *= a;
+}
+
+Console.WriteLine("Число {0} в степени {1} равно {2}", a, b, result);*/
+
+//Задача 26
 using System;
 
-namespace Involution
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            Console.Write("Введите трехзначное число: ");
-            int number1 = int.Parse(Console.ReadLine());
-            int number2 = int.Parse(Console.ReadLine());
-
-            int involution = number1^number2;
-
-            Console.WriteLine($"{involution}");
+class Program {
+    static void Main(string[] args) {
+        Console.Write("Введите число: ");
+        string input = Console.ReadLine();
+        int sum = 0;
+        foreach (char c in input) {
+            sum += int.Parse(c.ToString());
         }
+        Console.WriteLine($"Сумма цифр в числе: {sum} ");
     }
 }
